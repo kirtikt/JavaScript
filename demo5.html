@@ -1,0 +1,96 @@
+<!-- Create a web page for entering all personal details Information should containName, 
+ Date of Birth (use select drop down list), Gender, Address, Ps. No. , batch No. and 
+ Date of Joining (use select drop down list) Validate this form -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <script>
+
+        function validationForm(){
+
+            var name = document.frm.name.value.trim();
+            var email =  document.frm.email.value.trim();
+            var age = document.frm.age.value.trim();
+            var gender = document.frm.gender[0].checked || document.frm.gender[1].checked;
+            var checkbox = document.frm.terms.checked;
+            const namepattren=/^[A-Za-z\s]+$/
+           
+
+            if(name===""  ){
+                alert("Name is Required");
+            return false;
+            }
+
+            if(name.length<3 || name.length>15){
+                alert("Mininum length of name is 5 and maximum is 15. ")
+                return false;
+            }
+
+            if(!namepattren.test(name)){
+                alert("Name Can only contain letters and spaces.");
+                return false;
+            }
+            
+            var emailpattern= /@/;
+            if(!emailpattern.test(email)){
+                alert("Enter a valid email");
+                return false;
+            }
+        
+
+            if(age===""||isNaN(age)||  age<=0){
+                alert("please enter valid age");
+                return false;
+            }
+
+            if(!gender){
+                alert("please enter a gender.");
+                return false;
+            }
+
+            if(!checkbox){
+                alert("you must accept the terms and condition.");
+                return false;
+            }
+            
+            alert("Form Submitted Scuessfully");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    
+    <h2>Registration Form</h2>
+    <form action="" name="frm" onsubmit="return validationForm()" >
+
+        <label for="name">Name:</label>
+        <input type="text"  name="name" id="name"  ><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email"  ><br><br>
+
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age">
+
+        <br><br>
+        Male:  <input type="radio" name="gender" value="Male">
+
+        Female: <input type="radio" name="gender" value="Female">
+
+        <br><br>
+        <input type="checkbox" name="terms" > I aceept terms and conditons<br>
+
+
+        <input type="submit" value="submit">
+
+        
+    </form>
+
+    
+</body>
+</html>

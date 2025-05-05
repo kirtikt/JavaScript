@@ -1,0 +1,60 @@
+<!-- create 3 textbox and a dropdown list displaying mathematical operation. On click of button it should display result in 3rd text box -->
+<html>
+    <head>
+        <title>Calculator</title>
+        <script>
+            function Calculator(){
+                var num1 = parseFloat(document.getElementById("nm").value);
+                var num2 = parseFloat(document.getElementById("nm1").value);
+                var operation = document.getElementById("calculatedropdown").value;
+                
+                var result;
+
+
+                if(isNaN(num1) || isNaN(num2)){
+                    result = "Invalid entries";
+                }
+                else{
+                    switch (operation){
+                        case "Addition":
+                            result = num1 + num2;
+                            break;
+                     case "Substraction":
+                            result = num1 - num2;
+                            break;
+                        case "Multiplication":
+                            result = num1*num2;
+                            break;
+                        case "Division":
+                            result = num1 !==0 && num2 !==0 ? num1/num2 : "Divide";
+                            break;            
+                    }
+                }
+                document.getElementById("SelectedCalTextbox").value = result;
+
+
+
+
+
+            }
+            
+        </script>
+    </head>
+    <body>
+        <form onsubmit="Calculator">
+            <input type="text" id="nm" placeholder="Enter first number" required />
+            <input type="text" id="nm1" placeholder="Enter second number" required />
+        <label for="calculatedropdown">Select a operation</label>
+
+        <select id="calculatedropdown" onchange="Calculator()">
+            <option value="">---Select a operation</option>
+            <option value="Addition">Addition</option>
+            <option value="Substraction">Substraction</option>
+            <option value="Multiplication">Multiplication</option>
+            <option value="Division">Division</option>
+        </select>
+        <button type="Submit">Calculate</button>
+        result : <input type="text" id="SelectedCalTextbox" />
+        </form>
+    </body>
+</html>

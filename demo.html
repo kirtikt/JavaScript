@@ -1,0 +1,39 @@
+<!-- Create three textbox and two radio button [+ ,*] On click of radio button result of operation should be displayed in third text box give basic validation. -->
+
+<html>
+    <head>
+        <script>
+            function operation(){
+                var a = document.frm.xy.length
+                let text1 = document.getElementById("B1").value
+                let text2 = document.getElementById("B2").value
+                let text3 = document.getElementById("B3")
+                if(document.frm.xy[0].checked)
+                text3.value = +text1 + +text2
+            else
+            text3.value = +text1 - +text2
+            }
+            function confirm(){
+                document.frm.xy[0].checked = true;
+            }
+            
+
+        
+        </script>
+        
+
+    </head>
+    <body>
+        <p id="k"></p>
+        <form name="frm">
+            <input name="B1" id="B1" placeholder="Enter the number"/><br><br>
+            <input name="B2" id="B2" placeholder="Enter the second number"/><br><br>
+            <input type="radio" name="xy" value="add" /> Addition
+            <input type="radio" name="xy" value="minus" /> Substraction<br><br>
+            <input name="B3" id="B3" placeholder="Output"/><br><br>
+            <input type="button" value="read" onclick="operation()" />
+            <input type="button" value="confirm" onclick="" />
+        </form>
+
+    </body>
+</html>

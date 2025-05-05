@@ -1,0 +1,31 @@
+<!-- create 3 check box displaying book name and price, as per selection of user,  display total amount of book purchased in a disabled text box. -->
+
+<html>
+    <head>
+        <script>
+            function Lib(){
+                var libs = 0;
+                if(document.frm.xyz.checked)
+                libs+= +document.frm.xyz.value
+
+                if(document.frm.abc.checked)
+                libs+= +document.frm.abc.value
+
+                if(document.frm.lmn.checked)
+                libs += +document.frm.lmn.value
+
+                document.getElementById("k").innerHTML = libs;
+
+            }
+       </script>
+    </head>
+    <body>
+        <form name="frm">
+            <input type="checkbox" name="xyz" value="900"/>XYZ Rs-900<br><br>
+            <input type="checkbox" name="abc" value="1900"/>ABC Rs-1900<br><br>
+            <input type="checkbox" name="lmn" value="2900"/>LMN Rs-2900<br><br>
+            <div id="k"></div>
+            <input type="button" value="Bill" onclick="Lib()">
+        </form>
+    </body>
+</html>
