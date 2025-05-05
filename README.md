@@ -1,4 +1,4 @@
-------------------------------------------demo.html  ---------------------------------------------------------------------
+------------------------------------------demo.html  -------------------------------------------
 ✅ Summary of the Code
 This HTML + JavaScript code creates a simple calculator form that:
 
@@ -24,7 +24,7 @@ Has an unused line and an unused button (confirm button does nothing).
 
 
 
-------------------------demo1.html  ------------------------------------------------------------------------------
+------------------------demo1.html  -------------------------------------------------
 This is a simple HTML and JavaScript web page that allows users to select books using checkboxes and displays the total amount of selected books when a button is clicked.
 
 Key Components:
@@ -59,7 +59,7 @@ When the user checks one or more books and clicks "Bill", the total price of sel
 
 
 
-------------------------------------------demo2.html-----------------------------------------------------------------
+------------------------------------------demo2.html-------------------------------------------
 
 Summary of the Code:
 This HTML document creates a simple interactive form with the following functionality:
